@@ -20,7 +20,7 @@ void Copy_Vector(int v[], int V[], int n); //实现数组的拷贝
 int main(void)
 {
     int V[Max] = {0}, v_temp[Max] = {0};
-    int n = 3; //数列长度
+    int n = 100; //数列长度
     Random_Vector(V, n);
     printf("随机生成序列：\n\t");
     Print_Vector(V, n);
@@ -78,7 +78,31 @@ void Select_Sort(int V[], int n) //V为数据表名，n为记录数
     }
 }
 
+
+
 //冒泡排序算法
+void Bubble_Sort(int V[], int n)
+{
+    compare_num = 0;
+    move_num = 0;
+    int i, j, temp;
+    for (i = 1; i < n; i++)
+    {
+        for (j = 1; j <= n - i; j++)
+        {
+            compare_num++;
+            if (V[j] < V[j + 1])
+            {
+                temp = V[j];
+                V[j] = V[j + 1];
+                V[j + 1] = temp;
+                move_num++;
+            }
+        }
+    }
+}
+
+/*冒泡排序2
 void Bubble_Sort(int V[], int n)
 {
     compare_num = 0;
@@ -105,7 +129,8 @@ void Bubble_Sort(int V[], int n)
         }
         m = m - 1;
     }
-} //Bubble-Sort//
+} //Bubble-Sort//   
+*/
 
 //插入排序算法
 void Insert_Sort(int L[], int n) //L为表名，输出时L为有序//
